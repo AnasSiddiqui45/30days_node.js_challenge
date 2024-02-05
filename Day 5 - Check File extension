@@ -1,0 +1,21 @@
+# create a file name as index.js
+
+const path = require('path');
+
+function checkFileExtension(filePath, expectedExtension) {
+  const actualExtension = path.extname(filePath);
+
+  if (actualExtension === expectedExtension) {
+    console.log(`File has the expected extension: ${expectedExtension}`);
+  } else {
+    console.log(`File does not have the expected extension. Expected: ${expectedExtension}, Actual: ${actualExtension}`);
+  }
+}
+
+// Test Cases
+checkFileExtension('file.txt', '.txt');
+checkFileExtension('Anas.html', '.html');
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# then create one text file name as file.txt
+# And create a Html file name as Anas.html
