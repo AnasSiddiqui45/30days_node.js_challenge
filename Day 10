@@ -1,0 +1,66 @@
+// create a index.js file
+// write below code in index.js file
+
+const express = require("express");
+const path = require("path");
+const app = express();
+
+// Define the directory for serving static files
+const publicDirectoryPath = path.join(__dirname, "public");
+
+// Serve static files from the "public" directory
+app.use(express.static(publicDirectoryPath));
+
+// Start the server
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// create a folder named as 'public' and in that create a HTML file name as "index.html"
+// paste the below code in it
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    <h1>Welcome to My Webpage</h1>
+    <p>Here, you can learn about various coding languages such as HTML, CSS, Java, and many more.</p>
+    <!-- Replace the src attribute value with the URL of the Java image -->
+    <img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" alt="Html  Logo">
+</body>
+</html>
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// In public folder create a new folder named as 'style'
+//And in style folder create a CSS file named as "style.css"
+
+/* style.css */
+
+/* Apply styles to the <h1> element */
+h1{
+    color: blue; /* Change text color to blue */
+    font-family: Arial, sans-serif; /* Set font family */
+}
+
+  /* Apply styles to the <p> element */
+p {
+  font-size: 18px; /* Set font size to 18 pixels */
+    line-height: 1.6; /* Set line height to improve readability */
+}
+
+  /* Apply styles to the <img> element */
+img {
+    max-width: 100%; /* Ensure images don't exceed the width of their container */
+    height: 140px; /* Maintain aspect ratio */
+    display: block; /* Ensure images are displayed as blocks for proper alignment */
+    margin: 20px auto; /* Add margin for spacing */
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// After this simply run the command
