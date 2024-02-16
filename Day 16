@@ -1,0 +1,32 @@
+# create a new file name as 'index.js'
+# And paste the below command in it
+
+const express = require("express");
+const mongoose = require("mongoose");
+
+// create Express app
+const app = express();
+const port = process.env.PORT || 3000;
+
+//connect to MongoDB Database
+async function connectToMongoDB() {
+  try {
+    await mongoose.connect("mongodb://localhost:27017/my_database", {
+      usedNewurlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("Connected  to MongoDB Succssfully");
+  } catch (error) {
+    console.error("Error Connecting to MongoDB:", error);
+  }
+}
+
+connectToMongoDB().then(() => {
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
+});
+
+app.get("/", (req, res) => {
+  res.send("Day 16 done");
+});
